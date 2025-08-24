@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalandan Arama Motoru</title>
+</head>
+<body>
+    <h1>Basit Arama Motoru</h1>
+    <form action="https://google.com/search" target="_blank">
+        <input name="q" type="text" required>
+        <!-- required kodu zorunlu giriş alanları için kullanılır -->
+        <button type="submit">Ara</button>
+    </form>
+
+    <h2>Butona Özgü Action</h2>
+    <form target="_blank">
+        <input type="text" name="q" placeholder="Aranacak kelime..">
+        <button formaction="https://google.com/search">Google'de ara</button>
+        <button formaction="https://bing.com/search">Bing'de ara</button>
+    </form>
+</body>
+</html>
