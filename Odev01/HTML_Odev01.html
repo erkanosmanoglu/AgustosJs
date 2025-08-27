@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odev01</title>
+</head>
+<body>
+    <h1>Benim Seyehat & Hobi Sitem</h1>
+    <p>HTML Ödev Çalışması</p>
+    <h2>Başlık Denemeleri</h2>
+    <h2>En Büyük Başlık</h2>
+    <h3>İkinci Başlık</h3>
+    <h4>Üçüncü Başlık</h4>
+    <p>Bu paragraf <strong>önemli</strong> ve <i>vurgulu</i> bir <b>metin</b> içerir.</p>
+    <img src="kedi.jpg" alt="Pikachu" height="300">
+    <br>
+    <a href="https://www.flypgs.com/" target="_blank">Ucus Ara</a>
+    <hr>
+    <h2>Listeler</h2>
+    <h3>Gezilecek Yerler</h3>
+    <div>
+        <ul>
+            <li>Roma</li>
+            <li>Paris</li>
+            <li>Lizbon</li>
+        </ul>
+    </div>
+    <br>
+    <h3>Favori Hobiler</h3>
+    <div>
+        <ol>
+            <li>Yüzmek ve Fitness Yapmak</li>
+            <li>Surf Yapmak</li>
+            <li>Film İzlemek</li>
+        </ol>
+    </div>
+    <hr>
+    <h1>Tablo Örneği</h1>
+    <table>
+    <thead>
+      <tr>
+        <th>Adı</th>
+        <th>Branşı</th>
+        <th>Memleketi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Micheal Phelps&nbsp;&nbsp;&nbsp;</td>
+        <td>Olimpik Yüzücü&nbsp;&nbsp;&nbsp;</td>
+        <td>Amerika</td>
+      </tr>
+      <tr>
+        <td>Maria Sharapova&nbsp;&nbsp;&nbsp;</td>
+        <td>Olimpik Tenisçi&nbsp;&nbsp;&nbsp;</td>
+        <td>Rusya</td>
+      </tr>
+      <tr>
+        <td>Chris Bumpstead&nbsp;&nbsp;&nbsp;</td>
+        <td>Vücut Geliştirmeci&nbsp;&nbsp;&nbsp;</td>
+        <td>Kanada</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <iframe src="https://fanatik.com" frameborder="0" width="1075" height="600"></iframe>
+  <hr>
+  <h1>Entity ve Metin Biçimlendirme</h1>
+  <div>
+    <p>&lt;div&gt; etiketi sayfada blok oluşturmakta işe yarar.</p>
+    <p>Boşluk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eklenebilir.</p>
+    <p><b>H<sub>2</sub>O</b> suyun kimyasal formülüdür.</p>
+    <p>Evin Alanı: 150m<sup>2</sup></p>
+    <p><del>Eskişehir</del> yerine <span style="color:purple">Yenişehir</span></p>
+    <p style="font-family: arial;">Hepsine hükmedecek <i>tek yüzük</i>, hepsini o bulacak,<br>
+    Hepsini bir araya getirip karanlıkta birbirine bağlayacak</p>
+  </div>
+  <hr>
+  <h1>Form Örneği - Üye Ol</h1>
+  <form method="post" action="HTML_Odev01.html">
+        <div>
+            <label for="txtAd">Ad</label>
+            <input id="txtAd" type="text" name="ad" required placeholder="Adınızı giriniz">
+        </div>
+        <div>
+            <label for="txtEmail">E-posta</label>
+            <input type="email" name="email" id="txtEmail" required placeholder="mail@example.com">
+        </div>
+        <div>
+            <label for="sehir">Şehir</label>
+            <select name="sehir" id="sehir" required>
+                <option value="">Seçiniz</option>
+                <option value="1">Londra</option>
+                <option value="6">Amsterdam</option>
+                <option value="34">İstanbul</option>
+                <option value="35">Kopenhag</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="cinsiyet" value="e">
+                Erkek
+            </label>
+            <label>
+                <input type="radio" name="cinsiyet" value="k">
+                Kadın
+            </label>
+        </div>
+        <div>
+            <label>
+                <input name="aciklama" type="checkbox" required> Kuralları okudum ve kabul ediyorum.
+            </label>
+        </div>
+        <button>Kaydol</button>
+        <p>&copy; 2025 Seyahat ve Hobi Sitesi - Tüm Hakları Saklıdır.</p>
+    </form>
+
+
+    
+</body>
+</html>
