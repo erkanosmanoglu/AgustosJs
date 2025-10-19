@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline vs Block</title>
+    <style>
+        span {
+            font-size: 3em;
+            height: 100px;
+            background-color: red;
+            border: 3px solid green;
+            width: 100px;
+            display: inline-block;
+        }
+        /* block elementler kutu gibi davranır
+        içten dışa tabakaları:
+        content < padding < border VE dışında margin*/
+
+        .kutu:nth-child(2n) {
+            background-color: silver;
+        }
+        .kutu:nth-child(2n+1) {
+            background-color: slateblue;
+        }
+
+        .kutular {
+            background: repeating-linear-gradient(
+                45deg, #a8ce21 0px, #a8ce21 10px, brown 10px, brown 20px);
+            border: 10px solid blue;
+        }
+
+        .kutu {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            border: 5px solid white;
+            padding: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.644);
+        }
+
+        
+
+        .kutu:hover {
+            outline: 8px solid rgba(128, 0, 128, 0.5);
+        }
+
+        /* box shadow ve outline'ın elementlerin konumlarına yerleşimlerine etkisi yok, sadece dış çerçevesine görsel/estetik bir görünüm kazandırıyor*/
+    </style>
+</head>
+<body>
+    <div class="kutular">
+        <div class="kutu">1</div>
+        <div class="kutu">2</div>
+        <div class="kutu">3</div>
+        <div class="kutu">4</div>
+        <div class="kutu">5</div>
+        <div class="kutu">6</div>
+        <div class="kutu">7</div>
+        <div class="kutu">8</div>
+        <div class="kutu">9</div>
+        <div class="kutu">10</div>
+    </div>
+    <!-- <div.kutu*10>{$} -->
+    
+    <hr>
+    <p>HOC<span>A</span>M</p>
+</body>
+</html>
+
+<!-- https://getcssscan.com/css-box-shadow-examples -->
