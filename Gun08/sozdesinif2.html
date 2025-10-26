@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlk Çocuğu vs Türünün İlk Çocuğu</title>
+    <style>
+        /* Hem ilk çocuk hem p şartı */
+        p:nth-child(1) {
+            text-decoration: underline;
+        }
+
+        /* paragrafların ilki */
+        p:nth-of-type(1) {
+            text-transform: uppercase;
+        }
+
+        /* türüne bakılmaksızın divlerin ilk çocuklarının arkaplanını sarı yap */
+        div>:first-child {
+            background-color: yellow;
+        }
+
+        div {
+            border: 2px solid red;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            border: 2px dashed blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Bir Başlık</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, tenetur.</p>
+        <p>Eius corporis corrupti exercitationem consequuntur molestiae commodi, asperiores assumenda est?</p>
+        <p>Numquam ratione unde recusandae dolor cum quibusdam laudantium porro non.</p>
+    </div>
+
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p>Facere omnis officia sequi unde illo alias mollitia?</p>
+        <p>Sequi, corrupti unde quis ut ratione iusto repellendus.</p>
+    </div>
+</body>
+</html>

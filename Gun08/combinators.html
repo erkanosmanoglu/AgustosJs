@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators</title>
+    <style>
+        /* divin sınırları içindeki paragrafları koyu yap */
+        div p {
+            font-weight: bold;
+        }
+
+        /* divin doğrudan çocuğu olan paragrafların altını çiz */
+        div>p {
+            text-decoration: underline;
+        }
+
+        /* .mara sınıfına sahip elementten sonra gelen liste üyesi kardeşini kırmızı yap */
+        .mara+li {
+            color: red;
+        }
+
+        /* .mara sınıfına sahip elementten sonra gelen tüm liste öğelerini olan kardeşlerinin background'ını sarı yap */
+        .mara~li {
+            background-color: yellow;
+        }
+
+        /* ol listesinin ilk öğresinden sonra gelen tüm kardeşlerini italic yap */
+        /* yöntem 1 */
+        ol>li:nth-child(1)~li {
+            font-style: italic;
+        }
+        /* yöntem 2 */
+        ol>li:nth-child(n+2) {
+            font-style: italic;
+        }
+        /* yöntem 3 */
+        ol>:first-child~li {
+            font-style: italic;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--ol>li*6>lorem3-->
+    <ol>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Saepe, praesentium cumque?</li>
+        <li>Corrupti, ipsam at.</li>
+        <li>Nostrum, qui distinctio!</li>
+        <li>Id, numquam neque!</li>
+        <li>Odio, maiores recusandae!</li>
+    </ol>
+
+
+    <ul>
+        <li>messi</li>
+        <li>ronaldo</li>
+        <li class="mara">maradona</li>
+        <li>ronaldinho</li>
+        <li>icardi</li>
+    </ul>
+
+
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, libero.</p>
+
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet quis?</p>
+        </section>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime molestias illo et.</p>
+</body>
+</html>
