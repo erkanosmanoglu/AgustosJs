@@ -54,14 +54,15 @@
         }
 
         .square {
-            background-color: black;
+            
             width: 40px;
             height: 40px;
             position: absolute;
-            top: 50%;
-            left: 20px;
+            top: calc(50% - 20px);
+            left: 30px;
             animation: animation 1.5s linear infinite;
-        
+            /* margin-top: -20px; */
+            
         }
 
         @keyframes animation {
@@ -74,7 +75,7 @@
 </head>
 <body>
     <header>
-        <div class="square"></div>
+        <img class="square" src="../../Gun01/pikachu.jpg">
         Üst Kısım
     </header>
     <nav>Navigasyon</nav>
@@ -84,6 +85,5 @@
         <div class="right">Sağ Kısım</div>
     </main>
     <footer>Alt Kısım</footer>
-    <div class="square"></div>
 </body>
 </html>
