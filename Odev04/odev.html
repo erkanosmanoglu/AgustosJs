@@ -1,65 +1,83 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odev04 Flex ile 3 Sütun Yerleşim</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odev04 Flex ile 3 Sütun Yerleşim</title>
+    <style>
+        body {
 
-    body {
-      
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-    }
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
 
-    header, nav, main, footer {
-      background-color: lightgray;
-      text-align: center;
-      margin-bottom: 15px;
-      padding: 20px 0;
-    }
+        header,
+        nav,
+        main>div,
+        footer {
+            background-color: lightgray;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 20px 0;
+        }
 
-    main {
-      display: flex;
-      flex-flow: row nowrap; /* flex-direction + flex-wrap birleşimi https://www.w3schools.com/cssref/css3_pr_flex-flow.php */
-    }
+        main {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 1rem;
+            flex-flow: row nowrap;
+            /* flex-direction + flex-wrap birleşimi https://www.w3schools.com/cssref/css3_pr_flex-flow.php */
+        }
 
-    main>div {
-      flex: 1; 
-      padding: 475px 0;
-      text-align: center;
-    }
+        main>div {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            height: 300px;
+            text-align: center;
+        }
 
-    .sol {
-      order: 1;
-      align-self: flex-start;
-    }
+        .sol {
+            flex: 1;
+        }
 
-    .orta {
-      order: 2;
-      align-self: center;
-    }
+        .orta {
+            flex: 3;
+            
+        }
 
-    .sag {
-      order: 3;
-      align-self: flex-end;
-    }
+        .sag {
+            flex: 1;
+        }
 
-    
-  </style>
+        @media screen and (max-width: 600px) {
+            main {
+                flex-direction: column;
+                height: 500px;
+            }
+            
+            
+
+        }
+    </style>
 </head>
+
 <body>
-  <header>Header</header>
-  <nav>Navigation Menu</nav>
+    <header>Header</header>
+    <nav>Navigation Menu</nav>
 
-  <main>
-    <div class="sol">Left</div>
-    <div class="orta">Main Content</div>
-    <div class="sag">Right</div>
-  </main>
+    <main>
+        <div class="sol">Left</div>
+        <div class="orta">Main Content</div>
+        <div class="sag">Right</div>
+    </main>
 
-  <footer>Footer</footer>
+    <footer>Footer</footer>
 </body>
+
 </html>

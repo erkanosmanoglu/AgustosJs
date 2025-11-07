@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Resim Galerisi</title>
+    <style>
+        .galeri {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .galeri>img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="galeri">
+        <img src="http://picsum.photos/id/15/200/300" alt="resim">
+        <img src="http://picsum.photos/id/252/100/250" alt="resim">
+        <img src="http://picsum.photos/id/36/300/100" alt="resim">
+        <img src="http://picsum.photos/id/500/250/250" alt="resim">
+        <img src="http://picsum.photos/id/852/142/150" alt="resim">
+        <img src="http://picsum.photos/id/16/235/175" alt="resim">
+        <img src="http://picsum.photos/id/666/265/225" alt="resim">
+        <img src="http://picsum.photos/id/222/222/160" alt="resim">
+        <img src="http://picsum.photos/id/25/400/350" alt="resim">
+        <img src="http://picsum.photos/id/89/300/230" alt="resim">
+        <img src="http://picsum.photos/id/742/200/150" alt="resim">
+        <img src="http://picsum.photos/id/456/100/300" alt="resim">
+    </div>
+</body>
+</html>
