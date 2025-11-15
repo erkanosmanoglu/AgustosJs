@@ -122,3 +122,126 @@ footer {
     background-color: #ccc;
 }
 
+.post:hover {
+    transform: scale(1.06, 1.06);
+}
+
+
+.post2-image {
+    width: 100%;
+}
+
+.post2 {
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.post2-body {
+    padding: 1rem;
+}
+
+.post2-title {
+    margin: 0 0 0.5rem 0;
+}
+
+.post2-desc {
+    font-size: 1.2em;
+}
+
+.post2-date {
+    color: gray;
+}
+
+.post2-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post2-comments {
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.post2-comment-count {
+    margin-left: 0.4rem;
+}
+
+.post2:hover {
+    transform: scale(1.06, 1.06);
+}
+
+.sidebars {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.sidebar {
+    margin-left: 1.3rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sidebar-body {
+    padding: 1rem;
+}
+
+.sidebar-image {
+    width: 100%;
+}
+
+.pop-post-body {
+    margin-left: 1.3rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.pop-post-row {
+    display: flex;             
+    align-items: flex-start;   
+    padding: 1rem;  
+    border: 0.5px solid lightgray;           
+}
+
+.pop-post-img {
+    width: 75px;
+    height: 75px;
+    margin-right: 1rem;        
+}
+
+.pop-post-info {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+.titles {
+    font-weight: 500;
+    padding: 1.5rem 1rem;
+    background-color: lightgray;
+    margin-bottom: 0;
+}
+
+.pop-post-info, p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+.pop-post-row:hover {
+    transform: scale(1.07, 1.07);
+    border: 0;
+}
+
+.tags-body {
+    margin-left: 1.3rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.gmark { 
+    background-color: lightgray;
+    color: white;
+    padding: 0 0.5rem;
+}
+
