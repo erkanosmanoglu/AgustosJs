@@ -188,6 +188,7 @@ footer {
 
 .sidebar-image {
     width: 100%;
+    display: block;
 }
 
 .pop-post-body {
@@ -200,7 +201,7 @@ footer {
     display: flex;             
     align-items: flex-start;   
     padding: 1rem;  
-    border: 0.5px solid lightgray;           
+    border: 1px solid #ddd;           
 }
 
 .pop-post-img {
@@ -231,6 +232,7 @@ footer {
 .pop-post-row:hover {
     transform: scale(1.07, 1.07);
     border: 0;
+    background-color: white;
 }
 
 .tags-body {
@@ -239,9 +241,21 @@ footer {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+
 .gmark { 
     background-color: lightgray;
     color: white;
     padding: 0 0.5rem;
+}
+
+@media  screen and (max-width:991px) {
+    main {
+        flex-direction: column;
+    }
+
+    .pop-post-row:nth-child(4) {
+        display: none;
+    }
+    
 }
 
