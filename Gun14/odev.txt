@@ -1,0 +1,7 @@
+yeni bir html dosyası
+renk etiketli bir metin kutusu ve yanına göster yazan bir buton
+kullanıcı içine renk kodu girsin (red ya da #ccc gibi)
+göster butonuna tıklayınca renk sayfasının arka plan rengi olsun
+
+
+ipuçları: document.body.style.background = "kullanıcının girdiği değer"

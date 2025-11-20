@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto auto auto;
+}
+
+.personal_informations {
+    flex: 2;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.experience {
+    flex: 3;
+}
+
+.personal_informations {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.info_body {
+    padding: 1rem;
+}
+
+.communication {
+    display: flex;             
+    align-items: center;   
+    padding: 1rem;             
+}
+
+.first_comm, .second_comm, .third_comm, .fourth_comm {
+    margin-left: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #009688;
+    color: white;
+}
