@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamba</title>
+</head>
+<body>
+    <img id="lamba" src="img/off.png" alt="lamba">
+    <br>
+    <small>lambayı açıp kapatmak için lambaya dokunun</small>
+
+    <script>
+        const lamba = document.getElementById("lamba");
+        lamba.addEventListener("click", ackapa);
+
+
+        let acikMi = false;
+        
+        function ackapa() {
+            if (acikMi) {
+                lamba.src = "img/off.png";
+                acikMi = false;
+
+            }
+            else {
+                lamba.src = "img/on.png";
+                acikMi = true;
+
+            }
+            
+        }
+        
+    </script>
+    
+</body>
+</html>

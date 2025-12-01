@@ -1,0 +1,3 @@
+görev 3'teki gibi girilen değere göre bir dikdörtgenin anlık olarak genişlik ve yüksekliğini belirleyecek.
+
+ama bu sefer sayı kutularını değil range kontrolünü kullan

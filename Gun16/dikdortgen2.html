@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dikdortgen2 Gorev</title>
+    <style>
+        #dikdortgen {
+            border: 2px solid black; 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="gen">Genişlik:</label>
+    <input type="number" id="gen" name="gen" min="0" max="500" value="100">
+    <br>
+    <br>
+
+    <label for="yuk">Yükseklik:</label>
+    <input type="number" id="yuk" name="yuk" min="0" max="500" value="100">
+
+    <br>
+    <br>
+
+    <div id="dikdortgen"></div>
+
+    <script>
+        let inputGen = document.getElementById("gen");
+        let inputYuk = document.getElementById("yuk");
+        let divDik = document.getElementById("dikdortgen");
+
+        function guncelle() {
+            divDik.style.width = inputGen.value + "px";
+            divDik.style.height = inputYuk.value + "px";
+            divDik.textContent = inputGen.value + " x " + inputYuk.value;
+        }
+
+        inputGen.oninput = guncelle;
+        inputYuk.oninput = guncelle;
+
+        guncelle();
+    </script>
+    
+</body>
+</html>

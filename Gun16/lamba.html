@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamba</title>
+</head>
+<body>
+    <img id="lamba" src="img/off.png" alt="lamba">
+    <hr>
+    <button onclick="lambaAc()">Aç</button>
+    <button onclick="lambaKapa()">Kapa</button>
+    
+
+    <script>
+        let lamba1 = document.getElementById("lamba");
+
+        function lambaAc() {
+            lamba1.src = "img/on.png";
+        }
+
+        function lambaKapa() {
+            lamba1.src = "img/off.png";
+        }
+
+        lamba1.onclick = lambaAc;
+        
+
+    </script>
+    
+</body>
+</html>
