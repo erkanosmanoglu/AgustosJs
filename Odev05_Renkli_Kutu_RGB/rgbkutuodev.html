@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB RENK DEĞERLİ KUTU</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #orta-alan {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        #metin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #kontrol {
+            margin-bottom: 2rem;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            font-size: 20px;
+        }
+
+        .rgb-input {
+            width: 100px;
+            box-sizing: border-box;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="orta-alan">
+        <div id="box"></div>
+    </div>
+
+    <div id="metin">
+        <span>Bir RGB Renk Değeri Giriniz:</span>
+    </div>
+
+    <div id="kontrol">
+        
+        <span>rgb(</span>
+
+        <input class="rgb-input" id="r" type="number">
+        <span>,</span>
+
+        <input class="rgb-input" id="g" type="number">
+        <span>,</span>
+
+        <input class="rgb-input" id="b" type="number">
+
+        <span>)</span>
+
+        <button id="uygula">Uygula</button>
+    </div>
+
+    <script>
+    let aci = 0;
+
+    function degistir() {
+        let r = document.getElementById("r").value;
+        let g = document.getElementById("g").value;
+        let b = document.getElementById("b").value;
+
+        if (r < 0) {
+            alert("Kendine gel! Negatif değer alan bir rgb renk değeri olamaz!");
+            return;
+        }
+        else if (r > 255) {
+            alert("Kendine gel! 255'ten büyük bir rgb renk değeri olamaz!");
+            return;
+        }
+
+        if (g < 0) {
+            alert("Kendine gel! Negatif değer alan bir rgb renk değeri olamaz!");
+            return;
+        }
+        else if (g > 255) {
+            alert("Kendine gel! 255'ten büyük bir rgb renk değeri olamaz!");
+            return;
+        }
+        
+        if (b < 0) {
+            alert("Kendine gel! Negatif değer alan bir rgb renk değeri olamaz!");
+            return;
+        }
+        else if (b > 255) {
+            alert("Kendine gel! 255'ten büyük bir rgb renk değeri olamaz!");
+            return;
+        }
+
+        let rgb = "rgb(" + r + ", " + g + ", " + b + ")";
+
+        document.getElementById("box").style.backgroundColor = rgb;
+
+        aci += 90;
+        box.style.transform = "rotate(" + aci + "deg)";
+
+    }
+
+    document.getElementById("uygula").onclick = degistir;
+</script>
+
+</body>
+</html>
