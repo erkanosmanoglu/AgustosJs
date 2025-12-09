@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="frmKayit" onsubmit="alert('gubidik')">
+        <div id="bilgi"></div>
+
+        <div>
+            <label for="ad">Adınız</label>
+            <input type="text" name="ad" id="ad" required>
+        </div>
+
+        <div>
+            <label for="yas">Yaşınız</label>
+            <input type="text" name="yas" id="yas" min="18" required>
+        </div>
+        
+        <button>Kayıt Ol</button>
+    </form>
+
+    <script>
+        const frm = document.getElementById("frmKayit");
+
+        frm.onsubmit = function(event) {
+            event.preventDefault();
+            document.body.style.backgroundColor = "blue";
+            let ad = document.getElementById("ad").value;
+            let yas = document.getElementById("yas").value;
+            let divBilgi = document.getElementById("bilgi");
+            divBilgi.textContent = `Merhaba ${ad} (${yas})! Kaydınız alınmıştır.`
+
+        }
+
+    </script>
+</body>
+</html>
