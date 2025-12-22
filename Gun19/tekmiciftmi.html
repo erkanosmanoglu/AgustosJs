@@ -1,0 +1,43 @@
+<!-- Kullanıcıdan bir sayı kutusuyla sayı alınız ve ekrana aşağıdaki formatta sonucu yazdırın
+ 
+Örnek 1:
+15 sayısı bir tek sayıdır.
+
+Örnek 2:
+16 sayısı bir çift sayıdır.
+
+Kullanıcı sayıyı girer girmez herhangi bir botuna basmadan sonuç istenen formatta ekrana yansısın.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tek mi Cift mi?</title>
+</head>
+<body>
+    <h1>Bir sayı giriniz:</h1>
+    <input id="deger" type="number">
+    <div id="sonuc"></div>
+
+    <script>
+        const sayi = document.getElementById("deger");
+        const div = document.getElementById("sonuc");
+
+        function hesapla() {
+            
+            if (deger.value % 2 == 0)
+                div.textContent = "çift";
+            else
+                div.textContent = "tek";
+        }
+        
+        sayi.oninput = hesapla
+
+            
+
+    </script>
+    
+</body>
+</html>

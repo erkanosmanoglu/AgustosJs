@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorevler</title>
+</head>
+<body>
+    <input type="text" id="renkinput">
+    <button onclick="arkaPlanYap()">Renk Ayarla</button>
+    <script>
+        //renk ismini alan ve o rengi sayfanın arka planı yapan fonksiyonu yaz
+        function arkaPlanYap() {
+            let renk = document.getElementById("renkinput").value;
+            document.body.style.backgroundColor = renk;
+        }
+
+        function arkaPlanVer(renk) {
+            document.body.style.backgroundColor = renk;
+
+        }
+
+        function gradient(renk1, renk2, aci) {
+            document.body.style.backgroundImage = `linear-gradient(${aci}deg, ${renk1}, ${renk2})`;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ay Gün Sayısı</title>
+</head>
+<body>
+
+    <h2>Ay Gün Sayısı Hesaplama</h2>
+
+    <label>Aşağıda yer alan kısıma ay numarası giriniz: </label>
+    <br>
+    <br>
+
+    <input type="number" id="ay" placeholder="Ay numarası giriniz..">
+    <button onclick="gunSayisi()">Hesapla</button>
+
+    <p id="sonuc"></p>
+
+    <script>
+        function gunSayisi() {
+            let ay = Number(document.getElementById("ay").value);
+            let sonuc = document.getElementById("sonuc");
+
+            if (ay == 1 || ay == 3 || ay == 5 || ay == 7 || ay == 8 || ay == 10 || ay == 12) {
+                sonuc.textContent = "Bu ay 31 gün sürer.";
+            } 
+            else if (ay == 4 || ay == 6 || ay == 9 || ay == 11) {
+                sonuc.textContent = "Bu ay 30 gün sürer. ";
+            } 
+            else if (ay == 2) {
+                sonuc.textContent = "Bu ay 28 gün sürer";
+            } 
+            else {
+                sonuc.textContent = "Sence kaç ay var? Kendine gel ve yaptığın hatayı düzelt!";
+            }
+        }
+    </script>
+
+</body>
+</html>
