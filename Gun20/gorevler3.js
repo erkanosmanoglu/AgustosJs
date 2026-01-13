@@ -22,4 +22,4 @@ function kup(sayi) {
     return Math.pow(sayi, 3);
 }
 
-console.log(kup(10));
+console.log(kup)
