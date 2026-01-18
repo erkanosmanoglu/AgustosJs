@@ -44,3 +44,20 @@ c(dizi6);
 //t ile başlayanlar
 let dizi7 = sehirler.filter(x => x.startsWith("T"));
 c(dizi7);
+
+//a ile bitenler+
+let dizi8 = sehirler.filter(x => x.endsWith("a"));
+c(dizi8);
+
+//içinde ğ bulunan şehirler
+let dizi9 = sehirler.filter(x => x.includes("ğ"));
+c(dizi9);
+
+//sırasıyla içinde k ve i harfi yan yana olan şehirler
+let dizi10 = sehirler.filter(x => x.includes("ki"));
+c(dizi10);
+
+
+//içinde en az 2 tane a harfi bulunan şehirler  --->  Regex yöntemi  https://www.w3schools.com/js/js_regexp.asp
+let dizi11 = sehirler.filter(x => /a.*a/i.test(x));
+c(dizi11);
