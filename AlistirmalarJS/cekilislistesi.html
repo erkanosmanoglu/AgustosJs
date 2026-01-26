@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekiliş Listesi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, slateblue, mediumorchid);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+        }
+
+        textarea {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            resize: none;
+        }
+
+        button {
+            margin: 1rem 0;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-color: #fff;
+            color: slateblue;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all .2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Şanslı Kişiyi Bul</h1>
+    
+    <textarea id="kisiler" cols="20" rows="12"></textarea>
+
+        <button id="cekilis">Çekiliş Yap</button>
+
+        <h2 id="sonuc">?</h2>
+
+        <script>
+            const txt = document.getElementById("kisiler");
+            const btn = document.getElementById("cekilis");
+            const h2 = document.getElementById("sonuc");
+
+            btn.addEventListener("click", cekilisYap);
+
+            function cekilisYap() {
+                const kisiler = txt.value.split("\n");
+                const i = Math.floor(Math.random() * kisiler.length);
+                const talihli = kisiler[i];
+                h2.textContent = talihli;
+            }
+
+            txt.addEventListener("input", kaydet);
+
+            function kaydet() {
+                localStorage["veri"] = txt.value;
+            }
+
+            if (localStorage["veri"])
+                txt.value = localStorage["veri"];
+        </script>
+</body>
+</html>

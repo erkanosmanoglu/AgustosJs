@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fareyi Kovalayan Kedi</title>
+    <style>
+        #kedi {
+            font-size: 3rem;
+            position: absolute;
+            left: 100px;
+            top: 300px;
+            transition: all 0.2s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="kedi">🐱</div>
+
+    <script>
+        const kedi = document.getElementById("kedi");
+        document.addEventListener("mousemove", function(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            
+            kedi.style.left = x + "px";
+            kedi.style.top = y + "px";
+        })
+
+    </script>
+</body>
+</html>
