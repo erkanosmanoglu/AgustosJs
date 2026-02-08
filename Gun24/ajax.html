@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax/Fetch</title>
+</head>
+<body>
+    <h1>Harici Bir Kaynaktan Veri Çekme</h1>
+
+    <textarea id="txtSiir" rows="4" cols="40"></textarea>
+
+    <script>
+        const txt = document.getElementById("txtSiir");
+
+         fetch("siir.txt")
+             .then(res => res.text())
+             .then(text => {
+                 txt.value= text;
+             });
+
+        // const promise = fetch("siir.txt");
+
+        // const promise2 = promise.then(res => res.text())
+
+        // const promise3 = promise2.then(metin => {
+        //     txt.value = metin;
+        // });
+        
+    </script>
+</body>
+</html>
