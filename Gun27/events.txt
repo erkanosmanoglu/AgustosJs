@@ -1,0 +1,14 @@
+<div>
+            <label>
+                <input type="checkbox">
+                Çamaşırları yıka
+            </label>
+            <button>&times;</button>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" checked>
+                Fatura öde
+            </label>
+            <button>&times;</button>
+        </div>

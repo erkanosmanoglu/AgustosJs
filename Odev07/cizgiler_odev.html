@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastgele Çizgiler Ödev</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+        const adet = 10;
+
+        function rast(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function rastgeleCiz() {
+            const w = canvas.width, h = canvas.height;
+
+            c.beginPath();
+
+            const ilkX = rast(w);
+            const ilkY = rast(h);
+            c.moveTo(ilkX, ilkY);
+
+            for (let i = 1; i < adet; i++) {
+                c.lineTo(rast(w), rast(h));
+            }
+
+            c.lineTo(ilkX, ilkY);
+            c.closePath(); //son çizgiyle ilkini birleştiriyor fakat bu olmadan da denediğimde kapalı bir şekil oluşturuyor garantiye almak için bunu da ekledim https://www.w3schools.com/TAGS/canvas_closepath.asp
+
+            c.strokeStyle = `rgb(${rast(256)}, ${rast(256)}, ${rast(256)})`; // https://www.w3schools.com/tags/canvas_strokestyle.asp - cizim.html
+
+            c.stroke();
+        }
+
+        function yarimTemizle() {
+            c.fillStyle = "rgba(255, 255, 255, .5)";
+            c.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function ciz() {
+            yarimTemizle();
+            rastgeleCiz();
+        }
+
+        ciz();
+        setInterval(ciz, 500);
+
+    </script>
+</body>
+</html>
