@@ -1,0 +1,17 @@
+.slider {
+    display: flex;
+    
+}
+
+.left {
+    background-color: pink;
+}
+
+.mid {
+    background-color: greenyellow;
+    flex: 1;
+}
+
+.right {
+    background-color: yellow;
+}

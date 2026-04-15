@@ -1,7 +1,6 @@
 const img = document.getElementById("picture");
 const canvas = document.getElementById("canvas");
 
-// gösterilecek resim dosyalarının adları
 let photos = [
     "animal.jpg", 
     "city.jpg", 
@@ -10,15 +9,11 @@ let photos = [
     "mountain.jpg"
 ];
 
-// gösterilen resmin indexi
-
 let i = 0;
 
-function goster(degisim = 0) {
-    i+= degisim;
-    img.remove(); //animasyon için
+function showPhotos(show = 0) {
+    i+= show;
     img.src = "img/" + photos.at(i % 5);
-    canvas.appendChild(img); //animasyon için
 }
 
-goster();
+showPhotos();

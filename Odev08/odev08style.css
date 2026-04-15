@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    max-width: 1080px;
+    margin: 0  auto;
+}
+
+.photos {
+    flex: 1;
+}
+
+.photos>img {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.previous, .next {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.25, 1.25);
+}

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portföyüm - Erkan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 46, 0.8);
+            z-index: 1000;
+            animation: slideDown 0.6s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .auth-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .auth-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 20px;
+            animation: fadeIn 1s ease 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+            animation: cardFloat 0.6s ease backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes cardFloat {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-small {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            background: transparent;
+            color: #00d4ff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-small:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            padding: 8px 15px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #00d4ff;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comment-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .comment-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #00d4ff;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: #00d4ff;
+        }
+
+        .comment-time {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .comment-text {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .like-button {
+            margin-top: 12px;
+            padding: 6px 12px;
+            background: transparent;
+            border: 1px solid rgba(255, 100, 100, 0.5);
+            color: #ff6464;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .like-button:hover {
+            background: rgba(255, 100, 100, 0.1);
+            border-color: #ff6464;
+        }
+
+        .like-button.liked {
+            background: rgba(255, 100, 100, 0.2);
+            border-color: #ff6464;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                padding: 50px 20px;
+            }
+
+            .comments-section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Erkan</div>
+        <nav>
+            <a href="#home">Anasayfa</a>
+            <a href="#projects">Projeler</a>
+            <a href="#about">Hakkımda</a>
+            <a href="#comments">Yorum</a>
+        </nav>
+        <button class="auth-btn" onclick="loginModal()">Giriş Yap</button>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Merhaba, ben Erkan</h1>
+            <p>Web Geliştirici | Tasarımcı | İnovatör</p>
+            <button class="cta-button" onclick="document.getElementById('projects').scrollIntoView()">Projelerime Bak</button>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projelerim</h2>
+        <div class="projects-grid" id="projectsGrid">
+            <div class="project-card">
+                <div class="project-image">🎨</div>
+                <div class="project-content">
+                    <h3>Proje 1</h3>
+                    <p>Bu harika bir projedir. Modern tasarım ve kullanışlı arayüz.</p>
+                    <div class="project-actions">
+                        <button class="btn-small">👁️ Görüntüle</button>
+                        <button class="btn-small">⭐ Kaynak</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Hakkımda</h2>
+            <p>Merhaba! Ben Erkan, tutkulu bir web geliştirici ve tasarımcıyım. Modern teknolojiler kullanarak kullanıcı deneyimini maksimum düzeye çıkaran projeler geliştiriyorum.</p>
+            <p>Tasarım konusunda Apple'ın minimalist felsefesinden, geliştirme konusunda ise GitHub'ın açık kaynak kültüründen ilham alıyorum.</p>
+            <div class="skills">
+                <div class="skill-tag">HTML</div>
+                <div class="skill-tag">CSS</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Node.js</div>
+            </div>
+        </div>
+        <div class="about-image">👨‍💻</div>
+    </section>
+
+    <!-- Comments -->
+    <section class="comments-section" id="comments">
+        <h2 class="section-title">Yorumlar & Geri Bildirim</h2>
+        
+        <div class="comment-form" id="commentForm" style="display:none;">
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <input type="text" id="username" placeholder="Kullanıcı adınız">
+            </div>
+            <div class="form-group">
+                <label>Yorum</label>
+                <textarea id="commentText" rows="4" placeholder="Düşüncelerinizi paylaşın..."></textarea>
+            </div>
+            <button class="submit-btn" onclick="addComment()">Gönder</button>
+        </div>
+
+        <div class="comments-list" id="commentsList"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Erkan. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        let currentUser = null;
+        let comments = [];
+
+        function loginModal() {
+            const username = prompt("Lütfen kullanıcı adınızı girin:");
+            if (username && username.trim()) {
+                currentUser = username.trim();
+                document.querySelector('.auth-btn').textContent = `${currentUser}`;
+                document.getElementById('commentForm').style.display = 'block';
+            }
+        }
+
+        function addComment() {
+            if (!currentUser) {
+                alert('Lütfen önce giriş yapın!');
+                loginModal();
+                return;
+            }
+
+            const commentText = document.getElementById('commentText').value;
+            if (!commentText.trim()) {
+                alert('Lütfen bir yorum yazın!');
+                return;
+            }
+
+            const comment = {
+                id: Date.now(),
+                author: currentUser,
+                text: commentText,
+                time: new Date().toLocaleString('tr-TR'),
+                likes: 0,
+                liked: false
+            };
+
+            comments.unshift(comment);
+            document.getElementById('commentText').value = '';
+            renderComments();
+        }
+
+        function renderComments() {
+            const commentsList = document.getElementById('commentsList');
+            commentsList.innerHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-author">@${comment.author}</span>
+                        <span class="comment-time">${comment.time}</span>
+                    </div>
+                    <div class="comment-text">${comment.text}</div>
+                    <button class="like-button ${comment.liked ? 'liked' : ''}" onclick="toggleLike(${comment.id})">
+                        ❤️ ${comment.likes}
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleLike(commentId) {
+            const comment = comments.find(c => c.id === commentId);
+            if (comment) {
+                comment.liked = !comment.liked;
+                comment.likes += comment.liked ? 1 : -1;
+                renderComments();
+            }
+        }
+
+        renderComments();
+    </script>
+</body>
+</html>
