@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Giriş</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+
+    <div id="aciklama"></div>
+
+    <h2>My Hobbies</h2>
+
+    <ul>
+        <li>Watching Movies</li>
+        <li>Swimming</li>
+        <li>Reading Book</li>
+        <li>Traveling</li>
+    </ul>
+
+    <h2>My Travel List</h2>
+    <ol>
+        <li>Greece</li>
+        <li>France</li>
+        <li>USA</li>
+    </ol>
+
+    <p> 
+        Counter:
+        <button id="counter">0</button>
+    </p>
+
+    <h2>
+        Biography
+        <button id="showBio">Show/Hide</button>
+    </h2>
+
+    <p id="bio" style="display: none;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, sit commodi recusandae odio quaerat distinctio dolore fuga voluptates aliquid nihil eaque, obcaecati magnam error ad, nostrum voluptas! Vitae, impedit quod!
+    </p>
+
+    <h2>My Favorite English Words</h2>
+
+    <div id="words">
+        <p>congratulations</p>
+        <p>consequence</p>
+        <p>main</p>
+        <p>welcome</p>
+        <p>morning</p>
+    </div>
+
+    <script src="jquery-4.0.0.min.js"></script>
+    <script>
+        // #1 başlığın içine welcome yaz
+        // saf js ile:
+        // document.getElementById("baslik").textContent = "welcome";
+
+        // jquery ile:
+        $("#baslik").text("welcome");
+
+        // #2 baslıgın rengini kırmızı yap
+        // saf js ile:
+        // document.getElementById("baslik").style.color = "red";
+
+        // jquery ile: 
+        $("#baslik").css("color", "red");
+
+        // #3 aciklama divine My name is <strong>Cafer</strong> html kodunu ekle
+        // document.getElementById("aciklama").innerHTML = "My name is <strong>Cafer</strong>";
+
+        // jquery ile:
+        $("#aciklama").html("My name is <strong>Cafer</strong>");
+
+        // #4 🌸 emojisini tüm liste öğelerinin sonuna ekle
+        // saf jjs ile:
+        // document.querySelectorAll("li").forEach((el) => {
+        //     el.innerHTML += "🌸"
+        // });
+
+        // jquery ile:
+        $("li").append("🌸");
+
+        // Bu noktadan sonra sadece jquery
+        // #5 sayfadaki tüm li'lerden sadece ilkinin altını çiz
+        $("li").first().css("text-decoration", "underline");
+
+        // #6 li'lerin beşincisini kalın yap
+        $("li").eq(4).css("font-weight", "bold"); //indexler 0'dan başlar
+
+        // #7 sayaç butonuna tıklanınca içindeki sayıyı bir arttır
+        $("#counter").click(task7);
+
+        function task7() {
+            let num = Number($("#counter").text());
+            $("#counter").text(num + 1);
+        }
+
+        // #8 Show butonuna tıklanınca biografiyi göster
+        $("#showBio").click(function() {
+            $("#bio").show();
+        });
+
+        // yukarıdaki örnekte show() yerine toggle() deneyin
+
+        // #9 favori kelimelerin string uzunluğunu kelimenin sağına parantez içinde koy
+
+        // $("#words>").each((i, el) => {
+        //     let uz = el.textContent.length;
+        //     el.textContent += " (" + uz + ")";
+        // });
+
+        $("#words>").each((i, el) => {
+            let uz = $(el).text().length;
+            $(el).append("(" + uz + ")");
+        });
+
+        // #10 başlığın arka plan rengini değiştir ama başlığı saf js kodu ile al, css'ini jquery ile değiştir 
+        const baslik = document.getElementById("baslik");
+
+        // baslik.css("background-color", "yellow");
+
+        $(baslik).css("background-color", "yellow");
+
+        // #11 sayfaya gradient bir arka plan ver
+        $("body").css("background", "linear-gradient(cyan, magenta)");
+ 
+    </script>
+</body>
+</html>
