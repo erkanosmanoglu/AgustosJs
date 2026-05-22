@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Görevleri</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <button id="gizle">Açıklamayı gizle</button>
+    <div id="aciklama"></div>
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Ad, harum.</li>
+        <li>Magni, qui.</li>
+        <li>Voluptatum, maxime.</li>
+    </ul>
+
+    <hr>
+    <form action="#" id="bilgi"> 
+        Adınız <input type="text" id="ad"><br>
+        Karakter Sayısı <span id="adet">0</span>
+    </form>
+    <!-- G1: JQuery kütüphanesini CDN ile dahil et -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+        // Aşağıdaki görevleri JQuery yaparak kullanınız
+
+        // G2: baslik id'li elementin içine websitem metnini koy
+        $("#baslik").text("websitem");
+        // G3: baslik id'li elementin rengini değiştirin
+        $("#baslik").css("color", "lightblue");
+        // G4: aciklama id'li divin içine aşağıdaki HTML parçasını koyunuz
+        // <p>I love <strong>JQuery</strong></p>
+        $("#aciklama").html("<p>I love <strong>JQuery</strong></p>");
+
+        // G5: gizle id'li butona tıklandığında aciklama id'li div gizlensin
+        
+        // $("#gizle").click(function () {
+        //     $("#aciklama").hide();
+        // });
+
+        function aciklamaGizle() {
+            $("#aciklama").hide();
+        }
+        $("#gizle").click(aciklamaGizle);
+
+
+        
+        // G6: sayfadaki tüm li'lerin sonuna kalp emojisi ekle ♥ ya da &hearts;
+        $("li").append("&hearts;");
+
+        // G7: sayfadaki tüm li'lerin başına üç adet ünlem ekle !!!
+        $("li").prepend("!!!");
+
+        
+        // G8: herhangi bir li elementine çift tıklanırsa o li DOM üzerinden kaldırılsın (yani silinsin, gizleme istemiyoruz)
+        $("li").dblclick(function() {
+            $("li").remove();
+        })
+
+        // G9: ad id'li kutuya yazı yazıldıkça uzunluğu adet span'ında göster
+        // Örnek: fatih yazdığında 5 yazmalı span içinde ancak yazmaya başladığında her tuşa bastığında ya da sildiğinde anlık güncellemeli
+        $("#ad").on("input", function () {
+            $("#adet").text($(this).val().length);
+            //$("#adet").text(this.value.lenght);
+        });
+
+        // G10: bilgi id'li formu baslik id'li elementten hemen sonraya koy
+        $("#baslik").after($("#bilgi"));
+    </script>
+</body>
+</html>
